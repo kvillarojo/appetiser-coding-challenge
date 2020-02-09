@@ -1,0 +1,22 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// JQuery UI
+@import '~jquery-ui/themes/base/all.css';
+
+nav {
+    margin-bottom: 25px;
+}
+
+.col-active {
+    background-color: #CBE7FF !important;
+}
+
+
+
