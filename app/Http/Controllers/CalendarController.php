@@ -14,7 +14,8 @@ class CalendarController extends Controller
      */
     public function index()
     {
-       return response()->json(Calendar::select('events')->latest('created_at')->first(), 200);
+        $calendar = Calendar::select('events')->latest('created_at')->first();
+        return response()->json($calendar, 200);
     }
 
 

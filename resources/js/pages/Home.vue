@@ -15,7 +15,7 @@
                             </ul>
                         </div>
 
-                        <form @submit.prevent="submitEvents" method="post" id="eventScheduleForm">
+                        <form @submit.prevent="submitEvents" method="post">
                             <div class="form-group">
                                 <label> Event </label>
                                 <input class="form-control" v-model="form.eventName"/>
@@ -134,8 +134,7 @@
             },
             getMonthName() {
                 const monthNames = ["January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"
-                ];
+                "July", "August", "September", "October", "November", "December"];
 
                 const d = new Date();
                 this.currentDate = monthNames[d.getMonth()] + ' ' + d.getFullYear();
@@ -206,7 +205,7 @@
                 weekDays: {
                     presence: true,
                         length: {
-                        minimum: 1,
+                            minimum: 1,
                             message: '^Please select week days!'
                     }
                 }
