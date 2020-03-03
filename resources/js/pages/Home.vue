@@ -100,7 +100,7 @@
                     eventName: '',
                     dateFrom: null,
                     dateTo: null,
-                    weekDays: [],
+                    weekDays: []
                 }
             }
         },
@@ -146,20 +146,14 @@
                 return d.toString().split(' ')[0];
             },
             setDaysArray(y, m) {
-
                 const numDaysInMonth = this.getDaysInMonth(m, y);
-                let daysArray = [];
                 let name = '';
-                let num = 0;
 
-                for (let i = 0; i < numDaysInMonth; i++) {
-                    num  = (i + 1);
-                    name = this.getCurrentDayName(new Date(m+'/'+ (i+1) +'/'+y))
-
-                    daysArray.push({id:num + ' ' + name, week: name, num: num });
-                }
-
-                return daysArray;
+                return Array.from(Array(numDaysInMonth), (x, index) => {
+                    index += 1;
+                    name = this.getCurrentDayName(new Date(m+'/'+ index +'/'+y))
+                    return {id:index + ' ' + name, week: name, num: index }
+                })
             },
             getNumDays(){
                 const d = new Date();
